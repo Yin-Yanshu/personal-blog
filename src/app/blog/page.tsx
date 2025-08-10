@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import { allBlogs } from "content-collections";
 import Link from "next/link";
-import count from 'word-count'
+import count from "word-count";
 import { config } from "@/lib/config";
 import { formatDate } from "@/lib/utils";
 
@@ -12,16 +12,15 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const blogs = allBlogs.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const blogs = allBlogs.sort(
+    (a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-      <div className="space-y-8">
+      <div className="space-y-8 slide-enter-content">
         {blogs.map((blog: any) => (
-          <article 
-            key={blog.slug} 
-            className=""
-          >
+          <article key={blog.slug}>
             <Link href={`/blog/${blog.slug}`}>
               <div className="flex flex-col space-y-2">
                 <div className="flex items-center justify-between">
@@ -32,9 +31,7 @@ export default function BlogPage() {
                     {formatDate(blog.date)} · {count(blog.content)} 字
                   </span>
                 </div>
-                <p className="text-gray-600 line-clamp-2">
-                  {blog.summary}
-                </p>
+                <p className="text-gray-600 line-clamp-2">{blog.summary}</p>
               </div>
             </Link>
           </article>
@@ -43,5 +40,3 @@ export default function BlogPage() {
     </div>
   );
 }
-
-

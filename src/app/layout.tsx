@@ -89,7 +89,7 @@ export default function RootLayout({
         className="min-w-md overflow-x-hidden"
       >
         <Header />
-        {children}
+        <div className="slide-enter-content">{children}</div>
       </body>
     </html>
   );

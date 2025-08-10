@@ -48,7 +48,7 @@ export default function Home() {
 
       <div className="space-y-4">
         <h2 className="text-2xl font-bold mb-8">推荐阅读</h2>
-        <div className="space-y-8">
+        <div className="space-y-8 slide-enter-content">
           {blogs.map((blog: any) => (
             <article key={blog.slug} className="">
               <Link href={`/blog/${blog.slug}`}>
