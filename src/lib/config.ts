@@ -30,11 +30,7 @@ export const config = {
     bio: "这是一个 Nextjs 博客模板",
   },
   social: {
-    github: "https://github.com/xxx",
-    x: "https://x.com/xxx",
-    xiaohongshu: "https://www.xiaohongshu.com/user/profile/xxx",
-    wechat: "https://storage.xxx.com/images/wechat-official-account.png",
-    buyMeACoffee: "https://www.buymeacoffee.com/xxx",
+    github: "https://github.com/Yin-Yanshu",
   },
   giscus: {
     repo: "guangzhengli/hugo-ladder-exampleSite",
@@ -43,8 +39,8 @@ export const config = {
   },
   navigation: {
     main: [
-      { 
-        title: "文章", 
+      {
+        title: "文章",
         href: "/blog",
       },
     ],
@@ -52,7 +48,7 @@ export const config = {
   seo: {
     metadataBase: new URL("https://xxx.com"),
     alternates: {
-      canonical: './',
+      canonical: "./",
     },
     openGraph: {
       type: "website" as const,

@@ -1,25 +1,28 @@
 import { allBlogs } from "content-collections";
 import Link from "next/link";
-import count from 'word-count'
+import count from "word-count";
 import { config } from "@/lib/config";
 import { formatDate } from "@/lib/utils";
 
 export default function Home() {
   const blogs = allBlogs
     .filter((blog: any) => blog.featured === true)
-    .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort(
+      (a: any, b: any) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 
-  const socialLinks = [
-    { name: "赞赏", key: "buyMeACoffee" },
-    { name: "X", key: "x" },
-    { name: "小红书", key: "xiaohongshu" },
-    { name: "微信公众号", key: "wechat" },
-  ]
-    .map(item => ({
-      name: item.name,
-      href: config.social && config.social[item.key as keyof typeof config.social]
-    }))
-    .filter(link => !!link.href);
+  // const socialLinks = [
+  //   { name: "赞赏", key: "buyMeACoffee" },
+  //   { name: "X", key: "x" },
+  //   { name: "小红书", key: "xiaohongshu" },
+  //   { name: "微信公众号", key: "wechat" },
+  // ]
+  //   .map(item => ({
+  //     name: item.name,
+  //     href: config.social && config.social[item.key as keyof typeof config.social]
+  //   }))
+  //   .filter(link => !!link.href);
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -27,9 +30,9 @@ export default function Home() {
       <div className="mb-16 space-y-4">
         <h1 className="text-4xl font-bold">{config.site.title}</h1>
         <p className="text-md text-gray-600">{config.author.bio}</p>
-        
+
         {/* 社交链接 - 仅当有链接时才显示 */}
-        {socialLinks.length > 0 && (
+        {/* {socialLinks.length > 0 && (
           <div className="flex space-x-2 text-gray-600">
             {socialLinks.map((link, index) => (
               <div key={link.name} className="flex items-center">
@@ -40,7 +43,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        )}
+        )} */}
       </div>
 
       <div className="space-y-4">
@@ -58,9 +61,7 @@ export default function Home() {
                       {formatDate(blog.date)} · {count(blog.content)} 字
                     </span>
                   </div>
-                  <p className="text-gray-600 line-clamp-2">
-                    {blog.summary}
-                  </p>
+                  <p className="text-gray-600 line-clamp-2">{blog.summary}</p>
                 </div>
               </Link>
             </article>
