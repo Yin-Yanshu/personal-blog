@@ -40,7 +40,11 @@ export const config = {
   navigation: {
     main: [
       {
-        title: "文章",
+        title: "主页",
+        href: "/",
+      },
+      {
+        title: "博客",
         href: "/blog",
       },
     ],
