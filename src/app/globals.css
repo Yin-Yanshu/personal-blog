@@ -219,3 +219,29 @@
 .slide-enter-content > *:nth-child(20) {
   --enter-stage: 20 !important;
 }
+
+/* lenis配置 */
+html,
+body {
+  height: 100%;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

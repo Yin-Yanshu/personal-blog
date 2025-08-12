@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { config } from "@/lib/config";
+import { ReactLenis } from "lenis/react";
 
 export const metadata: Metadata = {
   title: config.site.title,
@@ -88,8 +89,16 @@ export default function RootLayout({
         }}
         className="min-w-md overflow-x-hidden"
       >
-        <Header />
-        <div className="slide-enter-content">{children}</div>
+        <ReactLenis
+          root // 作为全局根容器
+          options={{
+            duration: 1.2,
+            smoothWheel: true,
+          }}
+        >
+          <Header />
+          <div className="slide-enter-content">{children}</div>
+        </ReactLenis>
       </body>
     </html>
   );
