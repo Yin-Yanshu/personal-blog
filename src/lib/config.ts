@@ -33,14 +33,18 @@ export const config = {
     github: "https://github.com/Yin-Yanshu",
   },
   giscus: {
-    repo: "guangzhengli/hugo-ladder-exampleSite",
-    repoId: "R_kgDOHyVOjg",
-    categoryId: "DIC_kwDOHyVOjs4CQsH7",
+    repo: "Yin-Yanshu/personal-blog",
+    repoId: "R_kgDOPbbSQw",
+    categoryId: "DIC_kwDOPbbSQ84CuAm4",
   },
   navigation: {
     main: [
       {
-        title: "文章",
+        title: "主页",
+        href: "/",
+      },
+      {
+        title: "博客",
         href: "/blog",
       },
     ],
