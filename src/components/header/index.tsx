@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { NavDesktopMenu } from "./nav-desktop-menu";
 import { NavMobileMenu } from "./nav-mobile-menu";
 import GithubIcon from "@/components/icons/github";
 import { usePathname } from "next/navigation";
@@ -9,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { SquareTerminal } from "lucide-react";
 import { config } from "@/lib/config";
+import { DockMenu } from "./menu";
 
 export function Header() {
   const pathname = usePathname();
@@ -48,7 +48,7 @@ export function Header() {
 
         {/* Desktop navigation */}
         <div className="hidden md:block">
-          <NavDesktopMenu />
+          <DockMenu />
         </div>
 
         {/* Right side buttons */}
